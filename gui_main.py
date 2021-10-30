@@ -585,7 +585,7 @@ class Window(QDialog):
         fallDetEn = 0
         indicesIn = []
         
-        wr.writerow([pointCloud, targets, indexes, numTargets, self.frameNum, fail, classifierOutput, now])
+        wr.writerow([[pointCloud], [targets], [indexes], [numPoints], [numTargets], [self.frameNum], [fail], [classifierOutput], now])
         #print('graph numPoints = ',numPoints)
         #print('graph point cloud X = ',pointCloud[0,0])
         #print('graph point cloud Y = ',pointCloud[1,0])
