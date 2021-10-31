@@ -585,11 +585,13 @@ class Window(QDialog):
         fallDetEn = 0
         indicesIn = []
         
-        wr.writerow([[pointCloud], [targets], [indexes], [numPoints], [numTargets], [self.frameNum], [fail], [classifierOutput], now])
+        #wr.writerow([pointCloud, now])
+        #wr.writerow([[pointCloud], [targets], [indexes], [numPoints], [numTargets], [self.frameNum], [fail], [classifierOutput], now])
         #print('graph numPoints = ',numPoints)
         #print('graph point cloud X = ',pointCloud[0,0])
         #print('graph point cloud Y = ',pointCloud[1,0])
         #print('graph point cloud Z = ',pointCloud[2,0])
+        #print(now)
 
         #pass target XYZ vals and rotate due to elevation tilt angle (rotX uses Euler rotation around X axis)
         #print('elev_tilt = ',self.profile['elev_tilt'])
@@ -907,6 +909,7 @@ class Window(QDialog):
 if __name__ == '__main__':
     f = open('test.csv', 'w', encoding='utf-8', newline='')
     wr = csv.writer(f)
+    wr.writerow(["pointCloud", "targets", "indexes", "numPoints", "numTargets", "self.frameNum", "fail", "classifierOutput", "time"])
     if (compileGui): # compileGui가 0이기 때문에 실행하지 않음
         appctxt = ApplicationContext()
         app = QApplication(sys.argv)
